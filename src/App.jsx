@@ -1,4 +1,7 @@
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { MsalProvider } from '@azure/msal-react';
+import { msalConfig } from './config/msalConfig';
+import { PublicClientApplication } from '@azure/msal-browser';
 import Login from "./components/Login";
 import ShipmentList from "./pages/ShipmentList";
 import Header from "./components/Header";
@@ -29,11 +32,16 @@ function AppContent() {
   );
 }
 
+// Create MSAL instance
+const msalInstance = new PublicClientApplication(msalConfig);
+
 function App() {
   return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
+    <MsalProvider instance={msalInstance}>
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </MsalProvider>
   );
 }
 

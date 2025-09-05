@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import MicrosoftLogin from './MicrosoftLogin';
 
 export default function Login() {
   const { login } = useAuth();
@@ -193,14 +194,13 @@ export default function Login() {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Demo credentials</span>
+                <span className="px-2 bg-white text-gray-500">Or continue with</span>
               </div>
             </div>
 
-            <div className="mt-4 text-center text-sm text-gray-600">
-              <p>Use any email and password to sign in</p>
-              <p className="mt-1">Example: admin@xenerp.com / password123</p>
-            </div>
+            {/* Microsoft Login Component */}
+            <MicrosoftLogin />
+
           </div>
         </div>
       </div>
