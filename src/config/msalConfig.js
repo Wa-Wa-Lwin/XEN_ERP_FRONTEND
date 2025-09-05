@@ -7,7 +7,8 @@ export const msalConfig = {
     authority: 'https://login.microsoftonline.com/b8c84464-86e7-4d3a-8c4d-d5b1acce5b88', // Directory (tenant) ID
 
     // Must match the Redirect URI in Azure AD App Registration
-    redirectUri: 'https://192.168.60.31/xenlogistic_dev/',
+    // redirectUri: 'https://192.168.60.31/xenlogistic_dev/', // dev 
+    redirectUri: 'http://localhost:5173/xenlogistic_dev/', // local 
     postLogoutRedirectUri: 'https://192.168.60.31/xenlogistic_dev/',
   },
   cache: {
