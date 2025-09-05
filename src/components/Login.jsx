@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import MicrosoftLogin from './MicrosoftLogin';
-// import logo from '../assets/images/xenoptics_original_logo.png';
+import logo from '../assets/images/xenoptics_original_logo.png';
 
 export default function Login() {
   const { login } = useAuth();
@@ -82,8 +82,9 @@ export default function Login() {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center">
+          <img src={logo} alt="Xen Logistic Logo" className="mx-auto mt-4 mb-4 w-72 h-auto" /> 
           <h2 className="text-3xl font-bold text-gray-900">
-            Xen Logistic
+            Xen Logistic                       
           </h2>
           <p className="mt-2 text-sm text-gray-600">
             Sign in to your account
