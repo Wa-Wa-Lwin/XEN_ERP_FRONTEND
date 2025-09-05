@@ -2,7 +2,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { MsalProvider } from '@azure/msal-react';
 import { msalConfig } from './config/msalConfig';
 import { PublicClientApplication } from '@azure/msal-browser';
-import Login from "./components/Login";
+import LoginPage from "./components/Login/Login";
 import ShipmentList from "./pages/ShipmentList";
 import Header from "./components/Header";
 
@@ -21,7 +21,7 @@ function AppContent() {
   }
 
   if (!isAuthenticated) {
-    return <Login />;
+    return <LoginPage />;
   }
 
   return (
