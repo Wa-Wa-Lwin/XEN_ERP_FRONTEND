@@ -6,7 +6,7 @@ import { PublicClientApplication } from '@azure/msal-browser';
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";  // NOTE: add router
 
 import LoginPage from "./components/Login/Login";
-import LoginOld from "./components/Login Old"; // NOTE: import old login
+import LoginOld from "./components/Login/Login Old"; // NOTE: import old login
 import ShipmentList from "./pages/ShipmentList";
 import Header from "./components/Header";
 

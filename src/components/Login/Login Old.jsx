@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import MicrosoftLogin from './Login/MicrosoftLogin';
-import useLogin from '../hooks/useLogin';
-import logo from '../assets/images/xenoptics_original_logo.png';
+import { useAuth } from '../../contexts/AuthContext';
+import MicrosoftLogin from './MicrosoftLogin';
+import useLogin from '../../hooks/useLogin';
+import logo from '../../assets/images/xenoptics_original_logo.png';
 
 export default function Login() {
   const { login } = useAuth();
