@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, Shield, CheckCircle, AlertCircle, Truck, BarChart3, Smartphone, Zap } from 'lucide-react';
+import logo from '../../assets/images/xenoptics_original_logo.png';
 
 export default function XenLogisticLogin() {
   const [formData, setFormData] = useState({
@@ -95,9 +96,10 @@ export default function XenLogisticLogin() {
             
             {/* Brand Logo */}
             <div className="text-center mb-12 relative z-10">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+              {/* <h1 className="text-4xl lg:text-5xl font-bold mb-4">
                 XEN<span className="text-blue-400">OPTICS</span>
-              </h1>
+              </h1> */}
+               <img src={logo} alt="Xen Logistic Logo" className="mx-auto mt-4 mb-4 w-72 h-auto" />
               <p className="text-xl text-gray-300 font-light">
                 Logistics Shipments
               </p>
@@ -232,7 +234,8 @@ export default function XenLogisticLogin() {
                 <div className="flex items-center justify-center space-x-2 text-green-600 mb-2">
                   <Shield className="w-4 h-4" />
                   <span className="text-sm font-medium">Only @xenoptics.com email addresses allowed</span>
-                </div>                
+                </div>
+                
               </div>
             </div>
           </div>
