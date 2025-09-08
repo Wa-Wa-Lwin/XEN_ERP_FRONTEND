@@ -57,23 +57,6 @@ export default function LoginForm() {
         icon={Lock}
       />
 
-      {/* Remember me + Forgot password */}
-      <div className="flex items-center justify-between text-sm">
-        <label className="flex items-center space-x-3 cursor-pointer">
-          <input
-            type="checkbox"
-            name="rememberMe"
-            checked={formData.rememberMe}
-            onChange={handleInputChange}
-            className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
-          />
-          <span className="text-gray-700 font-medium">Remember me</span>
-        </label>
-        <a href="#" className="text-blue-600 hover:text-blue-800 font-semibold">
-          Forgot password?
-        </a>
-      </div>
-
       {/* Sign in button */}
       <button
         type="submit"
