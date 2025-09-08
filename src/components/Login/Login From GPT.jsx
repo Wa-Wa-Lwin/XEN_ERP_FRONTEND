@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, Shield, CheckCircle, AlertCircle, Truck, BarChart3, Smartphone, Zap } from 'lucide-react';
+import logo from '../../assets/images/xenoptics_original_logo.png';
 
 export default function XenLogisticLogin() {
   const [formData, setFormData] = useState({
-    email: 'admin@xenoptics.com',
+    // email: 'admin@xenoptics.com',
     password: '',
     rememberMe: false
   });
@@ -74,10 +75,10 @@ export default function XenLogisticLogin() {
   };
 
   const features = [
-    { icon: BarChart3, text: 'Real-time tracking & analytics' },
-    { icon: Truck, text: 'Optimized route planning' },
-    { icon: Smartphone, text: 'Mobile-first dashboard' },
-    { icon: Zap, text: 'Automated workflow management' }
+    // { icon: BarChart3, text: 'Real-time tracking & analytics' },
+    // { icon: Truck, text: 'Optimized route planning' },
+    // { icon: Smartphone, text: 'Mobile-first dashboard' },
+    // { icon: Zap, text: 'Automated workflow management' }
   ];
 
   return (
@@ -95,11 +96,12 @@ export default function XenLogisticLogin() {
             
             {/* Brand Logo */}
             <div className="text-center mb-12 relative z-10">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+              {/* <h1 className="text-4xl lg:text-5xl font-bold mb-4">
                 XEN<span className="text-blue-400">OPTICS</span>
-              </h1>
+              </h1> */}
+               <img src={logo} alt="Xen Logistic Logo" className="mx-auto mt-4 mb-4 w-72 h-auto" />
               <p className="text-xl text-gray-300 font-light">
-                Advanced Logistics Solutions
+                Logistics Shipments
               </p>
               <div className="w-24 h-1 bg-blue-400 mx-auto mt-4 rounded-full"></div>
             </div>
@@ -147,7 +149,7 @@ export default function XenLogisticLogin() {
                 {/* Email Field */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email Address
+                    XenOptics Email 
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -191,24 +193,7 @@ export default function XenLogisticLogin() {
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
-                </div>
-
-                {/* Options */}
-                <div className="flex items-center justify-between text-sm">
-                  <label className="flex items-center space-x-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="rememberMe"
-                      checked={formData.rememberMe}
-                      onChange={handleInputChange}
-                      className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
-                    />
-                    <span className="text-gray-700 font-medium">Remember me</span>
-                  </label>
-                  <a href="#" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
-                    Forgot password?
-                  </a>
-                </div>
+                </div>                
 
                 {/* Sign In Button */}
                 <button
@@ -248,11 +233,9 @@ export default function XenLogisticLogin() {
               <div className="mt-8 text-center">
                 <div className="flex items-center justify-center space-x-2 text-green-600 mb-2">
                   <Shield className="w-4 h-4" />
-                  <span className="text-sm font-medium">Secured with SSL encryption</span>
+                  <span className="text-sm font-medium">Only @xenoptics.com email addresses allowed</span>
                 </div>
-                <p className="text-xs text-gray-500">
-                  Only @xenoptics.com email addresses allowed
-                </p>
+                
               </div>
             </div>
           </div>
