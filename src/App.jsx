@@ -1,11 +1,12 @@
+import { useEffect } from "react";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { MsalProvider } from '@azure/msal-react';
 import { msalConfig } from './config/msalConfig';
 import { PublicClientApplication } from '@azure/msal-browser';
-import { Routes, Route, Navigate } from "react-router-dom";  // ✅ add router
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";  // NOTE: add router
 
 import LoginPage from "./components/Login/Login";
-import LoginOld from "./components/Login Old"; // ✅ import old login
+import LoginOld from "./components/Login Old"; // NOTE: import old login
 import ShipmentList from "./pages/ShipmentList";
 import Header from "./components/Header";
 
@@ -21,6 +22,13 @@ function ProtectedApp() {
 
 function AppContent() {
   const { isAuthenticated, isLoading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/", { replace: true }); // NOTE: replace-true will redirect immediately after login
+    }
+  }, [isAuthenticated, navigate]);
 
   if (isLoading) {
     return (
@@ -36,18 +44,22 @@ function AppContent() {
   return (
     <Routes>
       {/* Public routes */}
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/login_old" element={<LoginOld />} />
+      {!isAuthenticated && (
+        <>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login_old" element={<LoginOld />} />
+        </>
+      )}
 
       {/* Protected routes */}
-      {isAuthenticated ? (
+      {isAuthenticated && (
         <>
           <Route path="/" element={<ProtectedApp />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
         </>
-      ) : (
-        <Route path="*" element={<Navigate to="/login" replace />} />
       )}
+
+      {/* Catch-all */}
+      <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />} />
     </Routes>
   );
 }
